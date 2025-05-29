@@ -79,18 +79,18 @@ void shipItem(const double& item) {
 int main() {
     // MAIN
 
-    // Calling our generic package of type int 
+    // Calling our generic package of type int - display
     Package<int> intPackage(30);
     intPackage.label();
 
-    // Calling our specialized package for type string 
+    // Calling our specialized package for type string - display
     Package<std::string> bookPackage("The Lorax");
     bookPackage.label();
 
     // Calling partial specialization 
-    double fragileItem = 6.49;
-    Package<double*> fragilePackage(&fragileItem);
-    fragilePackage.label();
+    double fragItem = 6.49;
+    Package<double*> fragilePackage(&fragItem);
+    fragilePackage.label(); // Displaying 
 
     // Calling our box class with size as parameter
     Box<std::string, 2> bookBox;
@@ -98,9 +98,9 @@ int main() {
     bookBox.addItem("C++ Data Structures");
     bookBox.printItems();
 
-    // Calling shipping template
+    // Calling shipping template and displaying the shipping type details to console
     shipItem(45);
-    shipItem(std::string("iPhone));
+    shipItem(std::string("iPhone"));
     shipItem(20.5);
 
     return 0;
